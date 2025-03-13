@@ -1,0 +1,10 @@
+<form method="post">
+    <h2>Take Quiz</h2>
+    {% for q in questions %}
+        <p>{{ q.question }}</p>
+        {% for option in q.options %}
+            <input type="radio" name="{{ q._id }}" value="{{ option }}"> {{ option }}
+        {% endfor %}
+    {% endfor %}
+    <button type="submit">Submit</button>
+</form>
